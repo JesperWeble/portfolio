@@ -1,3 +1,10 @@
+// Practice C# - Calculating the Average of three numbers, defined by the user.
+// 15/09/2023
+//     Prompt the user to enter three numbers.
+//     Read and store the three numbers.
+//     Calculate the average of the three numbers.
+//     Display the calculated average.
+//
 ﻿using System.Linq;
 
 while (true) // Loop back to start if conditions are not met.
