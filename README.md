@@ -1,4 +1,3 @@
-# portfolio
-My portfolio of programming projects and practices.
+My portfolio of various programs that I have written as I try to learn how to program using various different languages.
 
-This is the raw code of the various programs that I write as I slowly work my way through the ropes of programming.
+Each branch represents the various languages.
