@@ -1,0 +1,113 @@
+//  -- Problem: Bank Account --
+//  19/09/2023
+//  Create a simple program to model a bank account. The account should have the following features:
+
+//  It should store the account holder's name and balance.
+//  It should have methods to deposit and withdraw money.
+//  It should be possible to get the current balance.
+
+//  Create a class called BankAccount with the following:
+
+//  A constructor that takes the account holder's name and initial balance as arguments and initializes the account.
+//  A method Deposit that takes an amount as an argument and adds it to the balance.
+//  A method Withdraw that takes an amount as an argument and subtracts it from the balance, but only if the balance is sufficient. 
+//  If there is not enough money, print a message saying "Insufficient funds."
+//  A method GetBalance that returns the current balance.
+
+
+class BankAccount
+{
+    public string Name = "EnterNameHere";
+    public double Balance = 0;
+    public BankAccount(string name, double initBal)
+    {
+        Name = name;
+        Balance = initBal;
+    }
+
+    public void Deposit(double depositAmount)
+    {
+        if (depositAmount > 0)
+        {
+            Balance += depositAmount;
+        }
+        else
+        {
+            Console.WriteLine("Invalid deposit amount!");
+        }
+    }
+
+     public void Withdraw(double withdrawAmount)
+    {
+        if (withdrawAmount <= 0)
+        {
+            Console.WriteLine("Invalid withdraw amount!");
+        }
+        else if (withdrawAmount <= Balance)
+        {
+            Balance -= withdrawAmount;
+        }
+        else
+        {
+            Console.WriteLine("Insufficient funds!");
+        }
+    }
+
+    public double GetBalance()
+    {
+        return Balance;
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            BankAccount account = new BankAccount("User", 0);
+            while (true)
+            {
+                Console.WriteLine($"Account: {account.Name} | Balance: {account.Balance}kr");
+                Console.WriteLine("Type one one of the following commands");
+                Console.WriteLine("'deposit [Amount]'");
+                Console.WriteLine("'withdraw [Amount]'");
+                Console.WriteLine("'exit'");
+                string command = Console.ReadLine();
+                string[] commandPart = command.Split(' ');
+
+                if (commandPart.Length == 2 && (commandPart[0].Equals("deposit", StringComparison.OrdinalIgnoreCase) || commandPart[0].Equals("withdraw", StringComparison.OrdinalIgnoreCase)))
+                {
+                    if (double.TryParse(commandPart[1], out double amount))
+                    {
+                        switch (commandPart[0].ToLower())
+                        {
+                            case "deposit":
+                                Console.WriteLine($"Depositing {amount}kr");
+                                account.Deposit(amount);
+                                Console.WriteLine("------------------");
+                                break;
+                            case "withdraw":
+                                Console.WriteLine($"Withdrawing {amount}kr");
+                                account.Withdraw(amount);
+                                Console.WriteLine("------------------");
+                                break;
+                            default:
+                                Console.WriteLine("Unknown Command");
+                                Console.WriteLine("------------------");
+                                break;
+                            
+                        }
+
+                    }
+                }
+                else if (command.Equals("exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Command");
+                }
+            } 
+        }
+    }
+}
+
