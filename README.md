@@ -1,4 +1,1 @@
-# portfolio
-My portfolio of programming projects and practices.
-
-This is the raw code of the various programs that I write as I slowly work my way through the ropes of programming.
+A portfolio of various programs I've made during my journey towards becomming a proper programmer.
