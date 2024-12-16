@@ -1,0 +1,25 @@
+*
+{
+    outline: 2px solid red;
+}
+
+body 
+{
+    color: white;
+    background-color: rgb(10, 10, 10);
+}
+
+main
+{
+    height: calc(100vh - 40px)
+}
+
+article
+{
+    max-width: 200px;
+    height: inherit;
+    margin: 5px 15px 5px 15px;
+    padding: 1px 10px 1px 10px;
+    background: rgb(50, 50, 50);
+    border-radius: 1rem;
+}
