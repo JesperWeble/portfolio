@@ -11,7 +11,8 @@ body
 
 main
 {
-    height: calc(100vh - 40px)
+    height: calc(100vh - 40px);
+    display: flex
 }
 
 article
@@ -22,4 +23,31 @@ article
     padding: 1px 10px 1px 10px;
     background: rgb(50, 50, 50);
     border-radius: 1rem;
+    overflow-y: auto;
+}
+h1
+{
+    font-size: 2em;
+}
+
+#sidebar
+{
+    font-size: 1.2em;
+}
+
+.grid 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 40px;
+    width: 80%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.box 
+{
+    background: rgb(50, 50, 50);
+    border: 1px solid white;
+    border-radius: 5px;
 }
